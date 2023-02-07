@@ -6,8 +6,24 @@ def bubble_sort(arr):
                 arr[j], arr[j+1] = arr[j+1], arr[j]
     return arr
 
+def searching(arr, key):
+    for i in range(len(arr)):
+        if key == arr[i]:
+            return i
+    return -1
+
+def membership(arr, key):
+    for i in range(len(arr)):
+        if key == arr[i]:
+            return 1
+    return 0
+
+
 
 if __name__ == "__main__":
-    arr = [1, 3, 6, 7,1,2]
-    arr2 = bubble_sort(arr)
-    print(arr2)
+    arr1 = [1, 0, 9, 6, 7, 1, 0]
+    bubble_sort(arr1)
+    print(arr1)
+
+    arr2 = [1, 0, 9, 6, 7, 1, 0]
+    print(searching(arr2, 0))
