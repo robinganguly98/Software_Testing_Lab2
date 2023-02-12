@@ -12,6 +12,21 @@ def searching(arr, key):
             return i
     return -1
 
+def binarySearch(arr, key):
+    r = len(arr)
+    l = 1
+
+    while l <= r:
+        i = round((l + r) / 2)
+        if key == arr[i]:
+            return i
+        elif key < arr[i]:
+            r = i - 1
+        else:
+            l = i + 1
+
+    return -1
+
 def membership(arr, key):
     for i in range(len(arr)):
         if key == arr[i]:
@@ -21,9 +36,6 @@ def membership(arr, key):
 
 
 if __name__ == "__main__":
-    arr1 = [1, 0, 9, 6, 7, 1, 0]
+    arr1 = [1, 0, 9, 6, 7, 1, 0,44,5,6,99,1,2,57,37,87,21,44,41,39]
     bubble_sort(arr1)
-    print(arr1)
-
-    arr2 = [1, 0, 9, 6, 7, 1, 0]
-    print(searching(arr2, 0))
+    print(binarySearch(arr1, 44))
